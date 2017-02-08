@@ -66,4 +66,4 @@ posts[1].formattedContent()
 // ✅ We achieved to factor out common business logic into the protocol SocialMediaPost
 // ✅ We are indeed able to call this common logic from the sub-types
 // ✅ We are able to use polymorphism when calling a method declared in the protocol SocialMediaPost
-// ❌ Common data field still have to be defined within each sub-type (but they are checked at compile-time, so no risk to forget or mispell one)
+// ❌ Common data fields still have to be defined within each sub-type (but they are checked at compile-time, so no risk to forget or mispell one)
