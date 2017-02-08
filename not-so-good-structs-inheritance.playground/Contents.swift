@@ -63,7 +63,7 @@ let posts: [SocialMediaPost] = [textPost, imagePost]
 posts[0].formattedContent()
 posts[1].formattedContent()
 
-// 😢 looks like that when we do polymorphism, things work the way we'd like them too
+// 😢 looks like that when we do polymorphism, things don't work the way we'd like them too
 
 // Conclusion
 
