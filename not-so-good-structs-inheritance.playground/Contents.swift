@@ -68,4 +68,4 @@ posts[1].formattedContent()
 // Conclusion
 
 // Basically, we tried to achieve something impossible. Swift simply does not implement dynamic dispatch
-// of method calls when it comes to structs (and it makes a lot of sense regardig performances!)
+// of method calls when it comes to structs (and it makes a lot of sense regarding performances!)
