@@ -30,16 +30,18 @@ let arrayA: Array<A> = arrayB
 // Array<B> is a subtype of Array<A>
 // Be careful, subtyping != inheritance => remember that arrays are structs, and structs don't do inheritance
 // We say that Array<T> is covariant with T
+// (This is possible because arrays have value semantics. If they had value semantics, the covariance would not be type safe)
 
 // Let's look at custom generic types
 
-class Wrapper<T> { }
+struct Wrapper<T> { }
 
 let wrapperB = Wrapper<B>()
 //let wrapperA: Wrapper<A> = wrapperB
 
 // We get a compile error, because Wrapper<B> is not a subtype of Wrapper<A>
 // We say that Wrapper<T> is invariant with T
+// (And it's the same for classes)
 
 // Now let's look at function types
 
