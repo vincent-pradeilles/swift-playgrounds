@@ -22,7 +22,7 @@ let a: A = b
 // As expected, an instance of type B can be substituted 
 // where an instance of type A is expected
 
-// What happens when the type is parameterized (i.e. when using generics)
+// What happens when the type is parameterized? (i.e. when using generics)
 
 let arrayB = Array<B>()
 let arrayA: Array<A> = arrayB
@@ -30,7 +30,7 @@ let arrayA: Array<A> = arrayB
 // Array<B> is a subtype of Array<A>
 // Be careful, subtyping != inheritance => remember that arrays are structs, and structs don't do inheritance
 // We say that Array<T> is covariant with T
-// (This is possible because arrays have value semantics. If they had value semantics, the covariance would not be type safe)
+// (This is possible because arrays have value semantics. If they had reference semantics, the covariance would not be compile-time type safe)
 
 // Let's look at custom generic types
 
@@ -41,7 +41,7 @@ let wrapperB = Wrapper<B>()
 
 // We get a compile error, because Wrapper<B> is not a subtype of Wrapper<A>
 // We say that Wrapper<T> is invariant with T
-// (And it's the same for classes)
+// (And it's the same for generic classes)
 
 // Now let's look at function types
 
@@ -58,9 +58,11 @@ var parameterB: (B) -> Void = { _ in }
 let parameterA: (A) -> Void = { _ in }
 parameterB = parameterA
 
-// The other way arround it works, because swift function are contravariant with the type of their arguments
+// The other way arround the code works, because swift function are contravariant with the type of their arguments
 
 let parameterAreturnsB: (A) -> B = { _ in return B() }
 let parameterBreturnsA: (B) -> A = parameterAreturnsB
 
 // Of course, contravariant on the argument and covariance on the return type can be used together
+
+// For more detailed information on the topic: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
